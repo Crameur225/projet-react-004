@@ -13,12 +13,15 @@ const HeaderForm = () => {
     const handleChangePiece = (e) => setIsSelectedPiece(e.target.value);
     const handleChangeBudget = (e) => setIsSelectedBudget(e.target.value);
     const handleChangeCommune = (e) => setIsSelectedCommune(e.target.value);
-
+     const handleSubmit = (e) =>{
+       e.preventDefaut()
+  }
   return (
-        <form className='py-8'>
+        <form className='py-8' onSubmit={handleSubmit}>
           <div className='flex flex-wrap justify-center items-center'>
             {/* input Search */}
-            <input type="search" className='py-3 pl-2 pr-14 rounded outline-none hover:outline-blue-800' name="" id="" placeholder='Entrez un mot-clé'/><button type="submit"  className='flex justify-center items-center bg-green-600 px-2 py-6 rounded  text-white m-2 h-8'><IoMdSearch/> Recherchez</button>
+            <input type="search" className='py-3 pl-2 pr-14 rounded outline-none hover:outline-blue-800' name="" id="" placeholder='Entrez un mot-clé'/>
+            <button type="submit"  className='flex justify-center items-center bg-green-600 px-2 py-6 rounded  text-white m-2 h-8'><IoMdSearch/> Recherchez</button>
           </div>
           <p className='text-center text-slate-600 py-4 '>Paramètre de Filtre</p>
           <div className='flex flex-wrap justify-center gap-y-4 items-center'>
